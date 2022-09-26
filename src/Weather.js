@@ -1,44 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
+import axios from "axios";
 
-export default function Weather() {
-  return (
-    <div className="Weather">
-      <form>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a city"
-              className="form-control"
-            />
-          </div>
-          <div className="col-3">
-            <input type="submit" value="Search" className="btn btn-primary" />
-          </div>
+export default function Weather(props) {
+  const [ready, setReady] = useState(false);
+  const [data, setData] = useState({});
+  function handleResponse(response) {
+    setData({
+      temp: response.data.main.temp,
+      city: response.data.name,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      description: response.data.weather.description,
+      feels: response.data.main.feels_like,
+    });
+    setReady(true);
+  }
+
+  if (ready) {
+    return (
+      <div className="Weather">
+        <div className="container">
+          <form>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  className="form-control"
+                  autoFocus="on"
+                />
+              </div>
+              <div className="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  className="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
-      <h1>San Marcos</h1>
-      <ul>
-        <li>Saturday 3:07</li>
-        <li>Mostly Cloudy</li>
-      </ul>
-      <div className="row">
-        <div className="col-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="Mostly Cloudy"
-          />
-          91° F
-        </div>
-        <div className="col-6">
+        <div className="container pt-4">
+          <h1>{data.city}</h1>
           <ul>
-            <li>Precipitation: 5%</li>
-            <li>Humidity: 47%</li>
-            <li>Wind: 7mph</li>
+            <li>Saturday 3:07</li>
+            <li>Mostly Cloudy</li>
           </ul>
+          <div className="row">
+            <div className="col-6">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="Mostly Cloudy"
+              />
+              {Math.round(data.temp)}° F
+            </div>
+            <div className="col-6">
+              <ul>
+                <li>Feels Like: {Math.round(data.feels)}° F</li>
+                <li>Humidity: {data.humidity}%</li>
+                <li>Wind: {Math.round(data.wind)} mph</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "095d2e824ddba0bb0037c48b7b065155";
+
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
+  }
 }

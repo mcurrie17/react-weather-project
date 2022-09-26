@@ -1,3 +1,22 @@
 .Weather {
   border: 1px solid #dadde1;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+.Weather h1 {
+  font-family: var(--font-1);
+  font-weight: 700;
+  color: #262626;
+}
+
+.Weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Weather li {
+  font-family: var(--font-2);
+  color: #262626;
+  list-style: none;
 }
