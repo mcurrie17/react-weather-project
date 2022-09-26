@@ -20,3 +20,23 @@
   color: #262626;
   list-style: none;
 }
+
+.Weather .tempDisplay {
+  font-size: 64px;
+  font-family: var(--font-1);
+  font-weight: 500;
+}
+
+.Weather i {
+  font-size: 50px;
+  margin: 10px 15px;
+  line-height: 64px;
+  vertical-align: center;
+}
+
+.Weather .unitDisplay {
+  position: relative;
+  top: -30px;
+  font-size: 21px;
+  margin-left: 5px;
+}
