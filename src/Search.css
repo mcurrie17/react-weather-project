@@ -1,0 +1,78 @@
+.Search {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.Search form {
+  background-color: #f1f4f2;
+  opacity: 0.9;
+  border-radius: 30px;
+  padding: 5px 20px 5px 20px;
+  margin: 10px;
+  font-size: 20px;
+}
+.Search input,
+button {
+  border: none;
+  outline: none;
+  justify-content: center;
+  padding: 10px;
+}
+
+.Search input {
+  color: var(--accent-color);
+  background-color: #f1f4f2;
+  width: 85%;
+}
+.Search button {
+  float: right;
+  background-color: #f1f4f2;
+  color: var(--accent-color);
+}
+
+.Search button:hover {
+  color: grey;
+}
+
+.Search .forecast {
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+.Search h1 {
+  font-family: var(--font-1);
+  font-weight: 700;
+  color: #262626;
+}
+
+.Search ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Search li {
+  font-family: var(--font-2);
+  color: #262626;
+  list-style: none;
+}
+
+.tempDisplay {
+  font-size: 64px;
+  font-family: var(--font-1);
+  font-weight: 500;
+}
+
+.Search i {
+  font-size: 50px;
+  margin: 10px 15px;
+  line-height: 64px;
+  vertical-align: center;
+}
+
+.unitDisplay {
+  position: relative;
+  top: -30px;
+  font-size: 21px;
+  margin-left: 5px;
+}

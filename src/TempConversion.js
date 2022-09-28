@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./Search.css";
+
 
 export default function TempConversion(props) {
   const [unit, setUnit] = useState("imperial");

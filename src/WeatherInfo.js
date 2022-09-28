@@ -3,9 +3,10 @@ import FormattedDate from "./FormattedDate";
 import Icon from "./Icon";
 import TempConversion from "./TempConversion";
 
+
 export default function WeatherInfo(props) {
   return (
-    <div className="WeatherInfo pt-4">
+    <div className="WeatherInfo">
       <h1>{props.data.city}</h1>
       <ul>
         <li>

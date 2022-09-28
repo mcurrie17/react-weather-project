@@ -1,9 +1,9 @@
 import "./App.css";
-import Weather from "./Weather";
+import Weather from "./Search";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App background">
       <div className="container">
         <Weather defaultCity="Austin"/>
         <footer>
