@@ -1,0 +1,11 @@
+.Search i {
+  font-size: 50px;
+  margin: 10px 15px;
+  line-height: 64px;
+  vertical-align: center;
+  color: var(--mauve);
+  animation: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+}

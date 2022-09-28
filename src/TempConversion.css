@@ -1,0 +1,13 @@
+.tempDisplay {
+  font-size: 64px;
+  font-family: var(--font-1);
+  font-weight: 500;
+  color: var(--dark-blue);
+}
+
+.unitDisplay {
+  position: relative;
+  top: -30px;
+  font-size: 21px;
+  margin-left: 5px;
+}

@@ -1,5 +1,5 @@
 .App {
-  background-image: url("/Users/megan/Desktop/react-weather-project/src/clouds.png");
+  background-image: url("/Users/megan/Desktop/react-weather-project/src/Images/clouds.png");
   background-size: cover;
   min-height: 100vh;
   display: flex;
